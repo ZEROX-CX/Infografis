@@ -6,103 +6,100 @@
 <title>Sejarah Indonesia</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-body {
-    font-family: Georgia, serif;
-    background: url('../asset/image.png') no-repeat center;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    }
 
+/* MOBILE ONLY */
+html, body{
+    width:100%;
+    height:100%;
+    max-width:430px;
+    margin:auto;
+    overflow-x:hidden;
+    font-family:Georgia, serif;
+    background:url('asset/image.png') no-repeat center center/cover;
+}
 
+/* Supaya tidak ketutup dock */
+body{
+    padding:20px;
+    padding-bottom:110px;
+}
+
+/* Container utama */
 .container{
-    backdrop-filter: blur(1px);
+    width:100%;
     text-align:center;
-    position:relative;
+    animation:fadeUp 0.8s ease;
 }
 
+/* Judul tetap di atas */
 h1{
-    color:#8b1e1e;
-    font-size:32px;
-    letter-spacing:2px;
-    margin-bottom:5px;
+    font-size:26px;
+    color:#7a0f0f;
+    margin-top:10px;
+    margin-bottom:20px;
+    letter-spacing:1px;
+    animation:fadeDown 0.8s ease;
 }
 
+/* Map di tengah */
+.map{
+    width:210px;
+    display:block;
+    margin:0 auto 20px auto;
+    animation:float 3s ease-in-out infinite;
+}
+
+/* Card teks */
+.text-card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    padding:22px;
+    border-radius:22px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.35);
+    animation:fadeUp 1s ease;
+}
+
+/* Subtitle */
 .subtitle{
     font-size:14px;
-    margin-bottom:25px;
+    margin-bottom:18px;
 }
 
-.map{
-    width:250px;
-    margin:10px 0;
-}
-
+/* Banner dalam card */
 .banner{
-    position: relative;
-    background: #8b5a2b;
-    color: #f8f1e4;
-    padding: 15px 30px;
-    margin: 30px auto;
-    width: 300px;
-    font-size: 14px;
-    text-align: center;
-    font-style: italic;
-    letter-spacing: 0.5px;
-}
-
-.banner::before,
-.banner::after{
-    content: "";
-    position: absolute;
-    top: 100%;
-    border-top: 20px solid #6f431d;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-}
-
-.banner::before{
-    left: 0;
-}
-
-.banner::after{
-    right: 0;
-}
-
-.mulai{
-    background:#b22222;
+    background:linear-gradient(145deg,#8b3a2a,#6f1d1d);
     color:white;
-    border:none;
-    padding:10px 35px;
-    font-size:16px;
-    cursor:pointer;
-    box-shadow:0 4px #7a1414;
+    padding:14px;
+    border-radius:16px;
+    font-size:14px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    transition:0.3s;
 }
 
-.mulai:active{
-    transform:translateY(3px);
-    box-shadow:0 1px #7a1414;
+.banner:active{
+    transform:scale(0.97);
 }
 
-
-@keyframes moveLight{
-    0%{ transform:translate(0,0); }
-    50%{ transform:translate(10%,10%); }
-    100%{ transform:translate(0,0); }
+/* Animasi */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
 }
 
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-25px);}
+    to{opacity:1;transform:translateY(0);}
+}
 
-.map{
-    width:250px;
-    margin:10px auto;
-    display: block;  
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -111,16 +108,22 @@ h1{
 
 <div class="container">
 
-<h1>SEJARAH INDONESIA</h1>
-<div class="subtitle">Dari Masa Penjajahan hingga Kemerdekaan</div>
+    <h1>SEJARAH INDONESIA</h1>
 
-<img class="map" src="asset/negara_indonesia-removebg-preview.png" class="map">
+    <img src="asset/negara_indonesia-removebg-preview.png" class="map">
 
-<div class="banner">
-Perjalanan panjang bangsa Indonesia dalam memperjuangkan kemerdekaan.
+    <div class="text-card">
+        <p class="subtitle">
+            Dari Masa Penjajahan hingga Kemerdekaan
+        </p>
+
+        <div class="banner">
+            Perjalanan panjang bangsa Indonesia dalam memperjuangkan kemerdekaan.
+        </div>
+    </div>
+
 </div>
 
-<button class="mulai">Mulai</button>
 
 </div>
 
