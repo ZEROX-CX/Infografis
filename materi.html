@@ -6,105 +6,90 @@
 <title>Materi Sejarah</title>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            font-family: Georgia, serif;
-            background: url('../asset/image.png') no-repeat center;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+/* MOBILE ONLY */
+html, body{
+    width:100%;
+    height:100%;
+    max-width:430px;          /* Batas maksimal HP */
+    margin:auto;              /* Center jika dibuka di desktop */
+    overflow-x:hidden;
+    font-family:Georgia, serif;
+    background:url('asset/image.png') no-repeat center center/cover;
+}
 
+/* Supaya isi tidak ketutup dock */
+body{
+    padding:20px;
+    padding-bottom:110px; 
+}
+
+/* Container utama */
 .container{
-width:100%;
-max-width:420px;
-background-size:cover;
-background-position:center;
-position:relative;
-overflow:hidden;
-padding:20px;
+    width:100%;
+    animation:fadeUp 0.8s ease;
 }
 
-.judul{
-text-align:center;
-margin-top:20px;
-margin-bottom:30px;
+/* Judul */
+h1{
+    text-align:center;
+    font-size:26px;
+    color:#7a0f0f;
+    margin-bottom:15px;
+    letter-spacing:1px;
+    animation:fadeDown 0.8s ease;
 }
 
-.judul h1{
-font-size:34px;
-color:#7a0f0f;
-font-weight:bold;
-letter-spacing:3px;
+/* Card universal */
+.card, .box{
+    background:linear-gradient(145deg,#8b3a2a,#6f1d1d);
+    color:white;
+    padding:15px;
+    border-radius:18px;
+    margin-bottom:15px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    transition:0.3s ease;
 }
 
-.garis{
-width:180px;
-height:3px;
-background:#7a0f0f;
-margin:10px auto;
-border-radius:5px;
+.card:active,
+.box:active{
+    transform:scale(0.97);
 }
 
-.box{
-display:flex;
-align-items:center;
-background:rgba(160,90,40,0.65);
-border:3px solid #3a1d0c;
-border-radius:20px;
-padding:12px;
-margin-bottom:18px;
-box-shadow:3px 4px 0px #2b1408;
-}
-
+/* Nomor lingkaran */
 .nomor{
-min-width:35px;
-height:35px;
-background:#8b0000;
-color:white;
-font-weight:bold;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-margin-right:10px;
-font-size:18px;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#7a0f0f;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:10px;
+    animation:pulse 2s infinite;
 }
 
-.text h2{
-color:#8b0000;
-font-size:18px;
-font-weight:bold;
+/* Animasi */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
 }
 
-.text p{
-color:white;
-font-size:14px;
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-25px);}
+    to{opacity:1;transform:translateY(0);}
 }
 
-@media(max-width:400px){
-
-.judul h1{
-font-size:28px;
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
 }
-
-.text h2{
-font-size:16px;
-}
-
-.text p{
-font-size:13px;
-}
-
-}
-
 </style>
 
 </head>
