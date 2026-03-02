@@ -5,61 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penutup</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            font-family: Georgia, serif;
-            background: url('../asset/image.png') no-repeat center;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+/* MOBILE ONLY */
+html, body{
+    width:100%;
+    height:100%;
+    max-width:430px;          /* Batas maksimal HP */
+    margin:auto;              /* Center jika dibuka di desktop */
+    overflow-x:hidden;
+    font-family:Georgia, serif;
+    background:url('asset/image.png') no-repeat center center/cover;
+}
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 100%;
-            max-width: 400px; /* Ukuran pas HP */
-            text-align: center;
-        }
+/* Supaya isi tidak ketutup dock */
+body{
+    padding:20px;
+    padding-bottom:110px; 
+}
 
-        h1 {
-            font-size: 32px;
-            color: #6b1d1d;
-            /* margin-bottom: 150px; */
-        }
+/* Container utama */
+.container{
+    width:100%;
+    animation:fadeUp 0.8s ease;
+}
 
-        .card {
-            background: rgba(101, 51, 16, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 20px;
-            
-        }
+/* Judul */
+h1{
+    text-align:center;
+    font-size:26px;
+    color:#7a0f0f;
+    margin-bottom:15px;
+    letter-spacing:1px;
+    animation:fadeDown 0.8s ease;
+}
 
-        .card p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
+/* Card universal */
+.card, .box{
+    background:linear-gradient(145deg,#8b3a2a,#6f1d1d);
+    color:white;
+    padding:15px;
+    border-radius:18px;
+    margin-bottom:15px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    transition:0.3s ease;
+}
 
-        @media (max-width: 360px) {
-            h1 {
-                font-size: 26px;
-            }
+.card:active,
+.box:active{
+    transform:scale(0.97);
+}
 
-            .card p {
-                font-size: 14px;
-            }
-        }
-    </style>
+/* Nomor lingkaran */
+.nomor{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#7a0f0f;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:10px;
+    animation:pulse 2s infinite;
+}
+
+/* Animasi */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-25px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
+}
+</style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
